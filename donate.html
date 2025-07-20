@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Processing - Ntu-Ongoni</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="img/ntu-ongoni-emblem.jpg" alt="Ntu-Ongoni Emblem" class="logo">
+                <span class="logo-text">Ntu-Ongoni</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#programs" class="nav-link">Programs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Donation Processing Section -->
+    <section class="donation-processing">
+        <div class="container">
+            <div class="processing-content">
+                <div class="processing-header">
+                    <div class="emblem-container">
+                        <img src="img/ntu-ongoni-emblem.jpg" alt="Ntu-Ongoni Emblem" class="emblem-medium">
+                    </div>
+                    <h1>Complete Your Donation</h1>
+                    <p>Thank you for choosing to support Ntu-Ongoni. Your contribution makes a real difference in our community.</p>
+                </div>
+
+                <div class="payment-methods">
+                    <h2>Choose Your Payment Method</h2>
+                    <div class="payment-options">
+                        <div class="payment-option">
+                            <div class="payment-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <h3>Credit/Debit Card</h3>
+                            <p>Secure payment via Visa, MasterCard, or American Express</p>
+                            <button class="btn btn-primary" onclick="selectPaymentMethod('card')">Select</button>
+                        </div>
+                        
+                        <div class="payment-option">
+                            <div class="payment-icon">
+                                <i class="fab fa-paypal"></i>
+                            </div>
+                            <h3>PayPal</h3>
+                            <p>Quick and secure payment through your PayPal account</p>
+                            <button class="btn btn-primary" onclick="selectPaymentMethod('paypal')">Select</button>
+                        </div>
+                        
+                        <div class="payment-option">
+                            <div class="payment-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>Mobile Money</h3>
+                            <p>Pay using your mobile money account (MTN, Airtel, etc.)</p>
+                            <button class="btn btn-primary" onclick="selectPaymentMethod('mobile')">Select</button>
+                        </div>
+                        
+                        <div class="payment-option">
+                            <div class="payment-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h3>Bank Transfer</h3>
+                            <p>Direct transfer to our official bank account</p>
+                            <button class="btn btn-primary" onclick="selectPaymentMethod('bank')">Select</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="donation-summary">
+                    <h3>Donation Summary</h3>
+                    <div class="summary-item">
+                        <span>Amount:</span>
+                        <span id="donation-amount">$0.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Purpose:</span>
+                        <span id="donation-purpose">General Fund</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Processing Fee:</span>
+                        <span id="processing-fee">$0.00</span>
+                    </div>
+                    <div class="summary-total">
+                        <span>Total:</span>
+                        <span id="total-amount">$0.00</span>
+                    </div>
+                </div>
+
+                <div class="security-info">
+                    <div class="security-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>SSL Encrypted</span>
+                    </div>
+                    <div class="security-item">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure Payment</span>
+                    </div>
+                    <div class="security-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Tax Deductible</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="img/ntu-ongoni-emblem.jpg" alt="Ntu-Ongoni Emblem" class="footer-emblem">
+                        <span class="footer-logo-text">Ntu-Ongoni</span>
+                    </div>
+                    <p>Empowering communities through unity, compassion, and sustainable development.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-envelope"></i> info@ntu-ongoni.org</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ntu-Ongoni. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .donation-processing {
+            padding: 120px 0 80px;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        .processing-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .processing-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .emblem-container {
+            margin-bottom: 2rem;
+        }
+
+        .emblem-medium {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(44, 90, 160, 0.2);
+        }
+
+        .payment-methods {
+            margin-bottom: 4rem;
+        }
+
+        .payment-methods h2 {
+            text-align: center;
+            color: #2c5aa0;
+            margin-bottom: 2rem;
+        }
+
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .payment-option {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .payment-option:hover {
+            transform: translateY(-5px);
+        }
+
+        .payment-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3d72 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .payment-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .payment-option h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+
+        .donation-summary {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .donation-summary h3 {
+            color: #2c5aa0;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #2c5aa0;
+            border-top: 2px solid #2c5aa0;
+            margin-top: 1rem;
+        }
+
+        .security-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .security-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+        }
+
+        .security-item i {
+            color: #2c5aa0;
+        }
+
+        @media (max-width: 768px) {
+            .payment-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .security-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+
+    <script>
+        function selectPaymentMethod(method) {
+            alert(`You selected ${method} payment method. In a real implementation, this would redirect to the appropriate payment processor.`);
+        }
+
+        // Get URL parameters for donation details
+        const urlParams = new URLSearchParams(window.location.search);
+        const amount = urlParams.get('amount') || '0';
+        const purpose = urlParams.get('purpose') || 'General Fund';
+
+        // Update donation summary
+        document.getElementById('donation-amount').textContent = `$${amount}`;
+        document.getElementById('donation-purpose').textContent = purpose;
+        
+        // Calculate processing fee (2.9% + $0.30 for card processing)
+        const processingFee = Math.round((parseFloat(amount) * 0.029 + 0.30) * 100) / 100;
+        document.getElementById('processing-fee').textContent = `$${processingFee.toFixed(2)}`;
+        
+        // Calculate total
+        const total = parseFloat(amount) + processingFee;
+        document.getElementById('total-amount').textContent = `$${total.toFixed(2)}`;
+    </script>
+</body>
+</html>

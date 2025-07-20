@@ -1,0 +1,125 @@
+/* Website Configuration 
+   Edit this file to customize basic settings without editing the main CSS */
+
+:root {
+    /* Primary Colors - Update these to match your organization's branding */
+    --primary-color: #2c5aa0;
+    --secondary-color: #1e3d72;
+    --accent-color: #4a90e2;
+    
+    /* Background Colors */
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --bg-dark: #1e3d72;
+    
+    /* Text Colors */
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-light: #999999;
+    --text-white: #ffffff;
+    
+    /* Spacing */
+    --section-padding: 80px;
+    --container-padding: 20px;
+    --element-spacing: 2rem;
+    
+    /* Border Radius */
+    --border-radius-small: 5px;
+    --border-radius-medium: 10px;
+    --border-radius-large: 15px;
+    --border-radius-round: 50%;
+    
+    /* Shadows */
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.15);
+    
+    /* Typography */
+    --font-family: 'Inter', sans-serif;
+    --font-size-small: 0.9rem;
+    --font-size-base: 1rem;
+    --font-size-large: 1.2rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 2.5rem;
+    --font-size-4xl: 3rem;
+    
+    /* Animation */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Organization-specific overrides */
+.logo-text,
+.footer-logo-text {
+    /* Customize organization name styling */
+    font-family: var(--font-family);
+    font-weight: 700;
+}
+
+.hero-title {
+    /* Customize main headline */
+    font-family: var(--font-family);
+    font-weight: 700;
+}
+
+/* Button customizations */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+}
+
+/* Program icons customization */
+.program-icon,
+.metric-icon {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+/* Navigation active state */
+.nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Section title colors */
+.section-title {
+    color: var(--primary-color);
+}
+
+/* Custom emblem sizing */
+.emblem-large {
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 20px 40px rgba(44, 90, 160, 0.2);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 60px;
+        --container-padding: 15px;
+        --element-spacing: 1.5rem;
+    }
+    
+    .emblem-large {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Print styles for donation receipts */
+@media print {
+    .navbar,
+    .hero,
+    .footer {
+        display: none;
+    }
+    
+    .donation-summary {
+        page-break-inside: avoid;
+    }
+}
